@@ -46,7 +46,7 @@ void pumpMain(){
     analogWrite(motor,255); // turn motor to max speed
     digitalWrite(LED,HIGH); // LED ON
     delay(5000); // wait for 5 seconds withh motor ON
-    anaglogWrite(motor,0); // Turn motor OFF
+    analogWrite(motor,0); // Turn motor OFF
     delay(20000); // Wait 20 seconds
   }
   else{
