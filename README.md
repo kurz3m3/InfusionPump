@@ -14,6 +14,8 @@
 
 - Pump runs for 5 seconds, and is off for 20 seconds, this process repeats
 - The user is able to activate the pump using a button
+- Green LED is ON when pump is active
+- Red LED is ON when pump is IDLE
 
 
 ## Tech
