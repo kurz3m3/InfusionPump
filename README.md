@@ -14,9 +14,6 @@
 
 - Pump runs for 5 seconds, and is off for 20 seconds, this process repeats
 - The user is able to activate the pump using a button
-- features
-- features
-- features
 
 
 ## Tech
