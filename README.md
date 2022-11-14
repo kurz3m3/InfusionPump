@@ -71,6 +71,7 @@ void setup() {
 
 ###
 Line 34
+
 Loop the pumpMain() function
 
 ```sh
@@ -81,6 +82,7 @@ void loop() {
 
 ###
 Line 46
+
 The pumpMain() function
 Turns the pump on and off using the appropriate functions
 Delay is in milliseconds.
@@ -101,6 +103,7 @@ void pumpMain(){
 
 ###
 Line 64
+
 Turns the motor ON, as well as the green LED.
 The red LED is turned OFF
 
@@ -116,6 +119,7 @@ void pumpOn(){
 ###
 
 Line 77
+
 Turns the motor OFF, and the green LED OFF
 The red LED is set to ON
 ```sh
@@ -129,6 +133,7 @@ void pumpOff(){
 
 ###
 Line 91
+
 Check if the button is pressed
 This function is of type bool, it will return a bool (True/False)
 ```sh
