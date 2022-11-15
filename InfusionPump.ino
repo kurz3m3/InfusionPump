@@ -8,6 +8,11 @@
 * @author Harvey
 * @date 11/7/2022
 */
+
+#include <LiquidCrystal.h>
+
+LiquidCrystal lcd(7,8,9,10,11,12,13);
+
 int greenLED = 2; // LED set to pin 2
 int redLED = 4;
 int button = 3; // button set to pin 3
@@ -32,6 +37,11 @@ void setup() {
   pinMode(buzzer,OUTPUT);
   Serial.begin(9600);
   Serial.println("Program Reset"); 
+  
+  lcd.begin(20,4);               // name.begin(cols,rows) is the code that gives the dimensions of the LCD 
+  lcd.clear();		    //Has the LCD blank the screen
+  lcd.setCursor(0,1);	  //set cursor to column 0, row 2
+  lcd.print("Program Reset");
 }
 
 
@@ -40,7 +50,11 @@ void setup() {
 */
 void loop() {
   pumpMain();
-  Serial.print("Temp:" + String(thermOutput()));
+
+  lcd.clear(); // clear screen
+  lcd.setCursor(0,1);	  //set cursor to column 0, row 2
+  lcd.print("Temp:" + String(thermOutput())); // print temp to screen
+  Serial.print("Temp:" + String(thermOutput())); // print temp to serial monitor
 }
 
 
@@ -59,12 +73,16 @@ void pumpMain(){
 
     if(thermOutput()>=80){
       pressedStatus = false; // set pressed to false
+      lcd.clear(); // clear screen
+      lcd.setCursor(0,1);	  //set cursor to column 0, row 2
+      lcd.print("EMERGENCY SHUTDOWN: TEMP EXCEEDED 80"); // print to screen
       Serial.println("EMERGENCY SHUTDOWN: TEMP EXCEEDED 80"); // print warning to user
       tone(buzzer,1000,1000); // play buzzer tone for 1 second
       pumpOff(); // disable pump
     }
 
     delay(20000); // Wait 20 seconds
+    lcd.clear(); // clear screen
   }
   else{
     pumpOff(); // disable pump
@@ -149,5 +167,5 @@ float thermOutput(){
 	float Tcelsius = Tkelvin - 273.15;
 	float Tfahren = (Tcelsius*(9.0/5.0))+32.0;
 
-  return Tfahren;
+  return Tfahren; // return fahrenheit
 }
