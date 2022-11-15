@@ -13,15 +13,15 @@
 
 LiquidCrystal lcd(7,8,9,10,11,12,13);
 
-int greenLED = 2; // LED set to pin 2
-int redLED = 4;
+int greenLED = 2; // green LED set to pin 2
+int redLED = 4; // red LED set to pin 4
 int button = 3; // button set to pin 3
 int motor = 5; // motor set to pin 6
 int buttonInput = 0; // buttonInput set to 0 meaning not pressed
 
-int buzzer = 6;
-int thermPin = A0;
-int thermValue = 0;
+int buzzer = 6; // buzzer set to pin 6
+int thermPin = A0; // thermal input A0 pin
+int thermValue = 0; // thermal value initialized to 0
 
 static bool pressedStatus;
 
