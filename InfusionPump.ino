@@ -13,6 +13,8 @@ int redLED = 4;
 int button = 3; // button set to pin 3
 int motor = 5; // motor set to pin 6
 int buttonInput = 0; // buttonInput set to 0 meaning not pressed
+
+int buzzer = 6;
 int thermPin = A0;
 int thermValue = 0;
 
@@ -27,6 +29,7 @@ void setup() {
   pinMode(redLED,OUTPUT);
   pinMode(button,INPUT);
   pinMode(thermPin,INPUT);
+  pinMode(buzzer,OUTPUT);
   Serial.begin(9600);
   Serial.println("Program Reset"); 
 }
@@ -55,15 +58,16 @@ void pumpMain(){
     pumpOff();
 
     if(thermOutput()>=80){
-      pressedStatus = false;
-      Serial.println("EMERGENCY SHUTDOWN: TEMP EXCEEDED 80");
-      pumpOff();
+      pressedStatus = false; // set pressed to false
+      Serial.println("EMERGENCY SHUTDOWN: TEMP EXCEEDED 80"); // print warning to user
+      tone(buzzer,1000,1000); // play buzzer tone for 1 second
+      pumpOff(); // disable pump
     }
 
     delay(20000); // Wait 20 seconds
   }
   else{
-    pumpOff();
+    pumpOff(); // disable pump
   }
 }
 
@@ -117,6 +121,12 @@ bool isPressed(){
 }
 
 
+/*
+* Check temp in fahrenheit
+* Returns a float which is the temp in F
+*
+*
+*/
 float thermOutput(){
   thermValue=analogRead(thermPin);
 
