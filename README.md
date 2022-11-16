@@ -34,6 +34,7 @@ Infusion Pump Components:
 - 330 Ohm Resistors - Used for LEDs and the push button
 - MOSFET Transistor - This is connected to our motor
 - Thermistor - takes the patient's temperature
+- 10k Ohm Resistor - Used for the Thermistor
 - Buzzer - Plays a high frequency tone notifying nearby operators
 - Liquid-crystal display (LCD) - Displays temperature readings and warnings
 
