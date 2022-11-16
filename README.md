@@ -42,7 +42,7 @@ Infusion Pump Components:
 
 The following diagram was made with [Fritzing]:
 
-![](Assets/InfusionPump_bb.png)
+![](Assets/Final_InfusionPump_bb.png)
 
 
 
