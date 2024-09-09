@@ -5,7 +5,7 @@
 
 ## Summary
 >My infusion pump project for the Introduction to Engineering class with Professor Krupczak.
->This is a project we were required to complete in our own time in the Hope College ENGS-100 class.
+>This is a project we were required to complete in our own time in the ENGS-100 class.
 >We were tasked with creating a working infusion pump using our new skills we had learned prior to this project.
 
 >*This documentation was NOT required for the assignment.*
